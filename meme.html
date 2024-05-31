@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.concave-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #4caf50;
+    overflow: hidden;
+}
+
+/* Create the concave shape at the top using ::before pseudo-element */
+.concave-box::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Adjust as needed to achieve the desired concave depth */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px; /* Should be equal to or greater than the width of the .concave-box */
+    height: 100px;
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 100px; /* Adjust to create the concave effect */
+    border-bottom-right-radius: 100px; /* Adjust to create the concave effect */
+}
+</style>
+<body>
+
+    <div class="concave-box"></div>
+    
+</body>
+</html>
